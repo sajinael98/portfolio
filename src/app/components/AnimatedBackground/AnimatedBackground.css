@@ -1,0 +1,75 @@
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+  background: linear-gradient(
+    135deg,
+    #070b1e 0%,
+    #111e4a 45%,
+    #271b60 75%,
+    #3d1573 100%
+  );
+}
+
+.orbital-layer {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background-image: radial-gradient(
+    rgba(200, 200, 200, 0.25) 2px,
+    transparent 1px
+  );
+  background-size: 80px 80px;
+  border-radius: 50%;
+  animation: orbit1 90s linear infinite;
+}
+
+.layer2 {
+  background-size: 100px 100px;
+  opacity: 0.6;
+  background-image: radial-gradient(
+    rgba(180, 180, 180, 0.18) 2.2px,
+    transparent 1px
+  );
+  animation: orbit2 110s linear infinite;
+}
+
+.layer3 {
+  background-size: 120px 120px;
+  opacity: 0.5;
+  background-image: radial-gradient(
+    rgba(160, 160, 160, 0.15) 2.5px,
+    transparent 1px
+  );
+  animation: orbit3 130s linear infinite;
+}
+
+@keyframes orbit1 {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    transform: rotate(360deg) scale(1.05);
+  }
+}
+
+@keyframes orbit2 {
+  from {
+    transform: rotate(360deg) scale(1);
+  }
+  to {
+    transform: rotate(0deg) scale(1.1);
+  }
+}
+
+@keyframes orbit3 {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    transform: rotate(360deg) scale(1.15);
+  }
+}

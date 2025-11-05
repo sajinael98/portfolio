@@ -1,0 +1,26 @@
+.responsiveShell {
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+@media (max-width: 1024px) {
+  .responsiveShell {
+    width: 85%;
+    padding-top: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsiveShell {
+    width: 100%;
+    padding: 60px 1.25rem 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .responsiveShell {
+    width: 100%;
+    padding: 50px 1rem 0 1rem;
+  }
+}

@@ -1,7 +1,19 @@
-import React from "react";
+import AnimatedBackground from "@/app/components/AnimatedBackground";
+import { AppShell } from "@mantine/core";
+import styles from "./page.module.css";
 
-const HomePage = () => {
-  return <div>HomePage</div>;
-};
-
-export default HomePage;
+export default function HomePage() {
+  return (
+    <AppShell
+      header={{ height: 60 }}
+      styles={{
+        header: { position: "static", backgroundColor: "transparent" },
+        main: { background: "transparent" },
+      }}
+      className={styles.responsiveShell}
+    >
+      <AnimatedBackground />
+      
+    </AppShell>
+  );
+}

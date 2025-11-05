@@ -9,3 +9,17 @@ body {
   background-color: #0d0d0d;
   color: #fff;
 }
+
+.appshell-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .appshell-wrapper {
+    padding: 0 1rem;
+  }
+}
