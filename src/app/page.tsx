@@ -1,5 +1,6 @@
-import AnimatedBackground from "@/app/components/AnimatedBackground";
 import { AppShell } from "@mantine/core";
+import Header from "@/app/components/layout/Header";
+import AnimatedBackground from "@/app/components/AnimatedBackground";
 import styles from "./page.module.css";
 
 export default function HomePage() {
@@ -13,7 +14,7 @@ export default function HomePage() {
       className={styles.responsiveShell}
     >
       <AnimatedBackground />
-      
+      <Header />
     </AppShell>
   );
 }
