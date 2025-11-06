@@ -1,0 +1,33 @@
+.title {
+  font-weight: 700;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.underline {
+  width: 160px;
+  height: 6px;
+  border-radius: 50px;
+  background: var(--grad-primary);
+  box-shadow: 0 0 14px rgba(138, 90, 255, 0.55),
+    0 0 28px rgba(60, 122, 255, 0.35);
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(138, 90, 255, 0.35),
+      0 0 25px rgba(60, 122, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(138, 90, 255, 0.7),
+      0 0 45px rgba(60, 122, 255, 0.45);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(138, 90, 255, 0.35),
+      0 0 25px rgba(60, 122, 255, 0.2);
+  }
+}
