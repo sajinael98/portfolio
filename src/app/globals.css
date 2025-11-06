@@ -1,3 +1,16 @@
+:root {
+  --brand-blue: #3a8dff;
+  --brand-purple: #8c52ff;
+
+  --text-white: #ffffff;
+
+  --grad-primary: linear-gradient(
+    90deg,
+    var(--brand-blue),
+    var(--brand-purple)
+  );
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -22,4 +35,50 @@ body {
   .appshell-wrapper {
     padding: 0 1rem;
   }
+}
+
+.gradient-text {
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-bg {
+  background: var(--grad-primary);
+}
+
+.section-underline {
+  width: 160px;
+  height: 6px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, var(--brand-blue), var(--brand-purple));
+  box-shadow: 0 0 14px rgba(138, 90, 255, 0.55),
+    0 0 28px rgba(60, 122, 255, 0.35);
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(138, 90, 255, 0.35),
+      0 0 25px rgba(60, 122, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(138, 90, 255, 0.7),
+      0 0 45px rgba(60, 122, 255, 0.45);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(138, 90, 255, 0.35),
+      0 0 25px rgba(60, 122, 255, 0.2);
+  }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
