@@ -13,7 +13,7 @@ const Header = () => {
   ));
 
   return (
-    <AppShellHeader withBorder={false} className={styles.glassHeader}>
+    <AppShellHeader withBorder={false} className={"glass"}>
       <Group justify="space-between" align="center" px="lg" h="100%">
         <Text
           fw={700}
