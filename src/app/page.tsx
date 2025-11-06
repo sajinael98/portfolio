@@ -1,8 +1,9 @@
-import { AppShell, AppShellMain } from "@mantine/core";
-import Header from "@/app/components/layout/Header";
 import AnimatedBackground from "@/app/components/AnimatedBackground";
-import styles from "./page.module.css";
+import Header from "@/app/components/layout/Header";
+import { AppShell, AppShellMain } from "@mantine/core";
+import ExperienceSection from "./components/sections/ExperienceSection";
 import HeroSection from "./components/sections/HeroSection";
+import styles from "./page.module.css";
 
 export default function HomePage() {
   return (
@@ -18,6 +19,8 @@ export default function HomePage() {
       <Header />
       <AppShellMain>
         <HeroSection />
+
+        <ExperienceSection />
       </AppShellMain>
     </AppShell>
   );
