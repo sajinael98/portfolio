@@ -4,6 +4,7 @@ import { AppShell, AppShellMain } from "@mantine/core";
 import ExperienceSection from "./components/sections/ExperienceSection";
 import HeroSection from "./components/sections/HeroSection";
 import styles from "./page.module.css";
+import SkillsSection from "./components/sections/SkillsSection";
 
 export default function HomePage() {
   return (
@@ -21,6 +22,8 @@ export default function HomePage() {
         <HeroSection />
 
         <ExperienceSection />
+
+        <SkillsSection />
       </AppShellMain>
     </AppShell>
   );
