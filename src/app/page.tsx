@@ -5,6 +5,7 @@ import ExperienceSection from "./components/sections/ExperienceSection";
 import HeroSection from "./components/sections/HeroSection";
 import styles from "./page.module.css";
 import SkillsSection from "./components/sections/SkillsSection";
+import ProjectsSection from "./components/sections/ProjectsSection";
 
 export default function HomePage() {
   return (
@@ -24,6 +25,8 @@ export default function HomePage() {
         <ExperienceSection />
 
         <SkillsSection />
+
+        <ProjectsSection />
       </AppShellMain>
     </AppShell>
   );
