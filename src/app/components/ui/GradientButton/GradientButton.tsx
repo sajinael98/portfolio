@@ -1,11 +1,12 @@
 import { Button, ButtonProps } from "@mantine/core";
-import React from "react";
+import { forwardRef } from "react";
 
-interface GradientButtonProps extends ButtonProps {}
+type GradientButtonProps = ButtonProps;
 
-const GradientButton = (props: GradientButtonProps) => {
-  return (
+const GradientButton = forwardRef<HTMLButtonElement, GradientButtonProps>(
+  (props, ref) => (
     <Button
+      ref={ref}
       variant="gradient"
       gradient={{
         from: "#3A8DFF",
@@ -14,10 +15,8 @@ const GradientButton = (props: GradientButtonProps) => {
       }}
       bdrs="md"
       {...props}
-    >
-      {props.children}
-    </Button>
-  );
-};
+    />
+  )
+);
 
 export default GradientButton;
