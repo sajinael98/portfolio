@@ -7,7 +7,7 @@ import {
 
 export const contacts = [
   {
-    href: "https://wa.me/xxxxxxxxxx",
+    href: "https://wa.me/18472697631",
     icon: IconBrandWhatsapp,
   },
   {
