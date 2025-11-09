@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
 import React, { useEffect, useRef } from "react";
 import Section from "@/app/components/ui/Section";
-import { Card, Group, Stack, Text, Title } from "@mantine/core";
+import { Card, Group, Stack, Text, ThemeIcon, Title } from "@mantine/core";
 import { IconUserCode } from "@tabler/icons-react";
 import { experiences } from "./experience-data";
 import styles from "./ExperienceSection.module.css";
@@ -37,8 +37,12 @@ const ExperienceSection = () => {
             p="xl"
           >
             <Group justify="space-between" align="flex-start">
-              <Group align="center">
-                <IconUserCode size={34} className={styles["experience-icon"]} />
+              <Group align="center" wrap="nowrap">
+                <ThemeIcon variant="transparent">
+                  <IconUserCode
+                    className={styles["experience-icon"]}
+                  />
+                </ThemeIcon>
                 <Stack gap={2}>
                   <Title order={4} className={styles["experience-role"]}>
                     {exp.role}
