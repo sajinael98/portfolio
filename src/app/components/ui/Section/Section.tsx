@@ -9,7 +9,7 @@ interface SectionProps extends BoxProps {
 
 const Section = ({ title, children, ...props }: SectionProps) => {
   return (
-    <Box {...props} component="section">
+    <Box {...props} component="section" mb="xl">
       <Stack gap="sm">
         <Text fz={{ base: "xl", md: "2rem" }} className={styles.title}>
           {title}

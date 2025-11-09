@@ -27,7 +27,7 @@ const ExperienceSection = () => {
   }, []);
 
   return (
-    <Section id="experience" title="Experience" mt={120}>
+    <Section id="experience" title="Experience">
       <Stack ref={ref} className={styles["experience-list"]}>
         {experiences.map((exp, i) => (
           <Card
