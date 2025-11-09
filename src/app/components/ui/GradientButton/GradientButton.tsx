@@ -1,5 +1,6 @@
 import { Button, ButtonProps } from "@mantine/core";
 import { forwardRef } from "react";
+import styles from "./GradientButton.module.css";
 
 type GradientButtonProps = ButtonProps;
 
@@ -13,6 +14,7 @@ const GradientButton = forwardRef<HTMLButtonElement, GradientButtonProps>(
         to: "#8C52FF",
         deg: 90,
       }}
+      className={styles.button}
       bdrs="md"
       {...props}
     />
