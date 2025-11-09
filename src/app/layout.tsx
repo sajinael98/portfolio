@@ -24,7 +24,7 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body>
-        <MantineProvider>
+        <MantineProvider forceColorScheme="dark">
           <div className="appshell-wrapper">{children}</div>
         </MantineProvider>
       </body>
