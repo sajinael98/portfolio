@@ -2,6 +2,7 @@
 
 import { Card, Group, SimpleGrid, Stack, Text, Box } from "@mantine/core";
 import Section from "../../ui/Section";
+import { motion } from "framer-motion";
 
 type Skill = { name: string; icon: React.ReactNode };
 
@@ -3618,17 +3619,38 @@ const DEVOPS: Skill[] = [
   },
 ];
 
-function SkillsSection({ title, skills }: { title: string; skills: Skill[] }) {
-  return (
-    <Box mb="lg">
-      <Text fw={800} fz={{ base: "md", md: "md" }} mb="lg" c="white">
-        {title}
-      </Text>
+const skillItemVariants = {
+  hidden: { opacity: 0, y: 35 },
+  visible: { opacity: 1, y: 0 },
+};
 
-      <SimpleGrid cols={{ base: 2, sm: 3, md: 4, lg: 6 }} spacing="lg">
-        {skills.map((skill) => (
+const SkillsSection = ({
+  title,
+  skills,
+}: {
+  title: string;
+  skills: Skill[];
+}) => (
+  <Box mb="lg">
+    <Text fw={800} fz={{ base: "md", md: "md" }} mb="lg" c="white">
+      {title}
+    </Text>
+
+    <SimpleGrid cols={{ base: 2, sm: 3, md: 4, lg: 6 }} spacing="lg">
+      {skills.map((skill, index) => (
+        <motion.div
+          key={skill.name}
+          variants={skillItemVariants}
+          initial="hidden"
+          whileInView="visible"
+          transition={{
+            duration: 0.45,
+            delay: index * 0.08,
+            ease: "easeOut",
+          }}
+          viewport={{ once: true, margin: "-80px" }}
+        >
           <Card
-            key={skill.name}
             padding="lg"
             radius="md"
             className="glass"
@@ -3641,18 +3663,17 @@ function SkillsSection({ title, skills }: { title: string; skills: Skill[] }) {
               </Text>
             </Stack>
           </Card>
-        ))}
-      </SimpleGrid>
-    </Box>
-  );
-}
+        </motion.div>
+      ))}
+    </SimpleGrid>
+  </Box>
+);
+const SkillsGrid = () => (
+  <Section id="skills" title="Skills">
+    <SkillsSection title="Front End" skills={FRONTEND} />
+    <SkillsSection title="Back End" skills={BACKEND} />
+    <SkillsSection title="DevOps / Tools" skills={DEVOPS} />
+  </Section>
+);
 
-export default function SkillsGrid() {
-  return (
-    <Section id="skills" title="Skills">
-      <SkillsSection title="Front End" skills={FRONTEND} />
-      <SkillsSection title="Back End" skills={BACKEND} />
-      <SkillsSection title="DevOps / Tools" skills={DEVOPS} />
-    </Section>
-  );
-}
+export default SkillsGrid;

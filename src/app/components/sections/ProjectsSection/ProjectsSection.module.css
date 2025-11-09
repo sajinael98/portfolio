@@ -56,22 +56,3 @@
   display: flex;
   gap: 8px;
 }
-
-.project-card__animate {
-  opacity: 0;
-  transform: translateX(0);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.from-left {
-  transform: translateX(-60px);
-}
-
-.from-right {
-  transform: translateX(60px);
-}
-
-.show {
-  opacity: 1;
-  transform: translateX(0);
-}

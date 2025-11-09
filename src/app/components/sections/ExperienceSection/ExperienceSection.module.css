@@ -8,15 +8,9 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(14px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.25s ease,
-    border-color 0.25s ease;
-}
-
-.show {
-  opacity: 1;
-  transform: translateY(0);
+  border-radius: var(--mantine-radius-lg);
+  transition: box-shadow 0.35s ease, border-color 0.35s ease,
+    transform 0.35s ease;
 }
 
 .experience-card:hover {

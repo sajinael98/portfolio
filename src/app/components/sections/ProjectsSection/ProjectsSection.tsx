@@ -1,7 +1,6 @@
 "use client";
 import {
   Box,
-  Button,
   Card,
   Center,
   Group,
@@ -10,13 +9,13 @@ import {
   Text,
 } from "@mantine/core";
 import { IconBrandGithub, IconEye, IconPhotoOff } from "@tabler/icons-react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import GradientButton from "../../ui/GradientButton";
+import OutlineButton from "../../ui/OutlineButton";
 import Section from "../../ui/Section";
 import { Project, projects } from "./projects-data";
-import { useInViewport, useIsFirstRender } from "@mantine/hooks";
 import styles from "./ProjectsSection.module.css";
-import OutlineButton from "../../ui/OutlineButton";
 
 interface ProjectCardProps {
   data: Project;
@@ -36,65 +35,66 @@ const NoImage = () => (
 
 const ProjectCard = ({ data, index }: ProjectCardProps) => {
   const { demo, description, tags, title, github, image } = data;
-  const { ref, inViewport } = useInViewport();
 
-  const isEven = index % 2 === 0;
+  const fromX = index % 2 === 0 ? -60 : 60;
 
   return (
-    <Card
-      ref={ref}
-      className={[
-        "glass",
-        styles["project-card"],
-        styles["project-card__animate"],
-        isEven ? styles["from-left"] : styles["from-right"],
-        inViewport ? styles["show"] : "",
-      ].join(" ")}
+    <motion.div
+      initial={{ opacity: 0, x: fromX, y: 30 }}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.12,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+      viewport={{ once: true, margin: "-120px" }}
     >
-      <Box className={styles["project-card__image-wrapper"]}>
-        {image ? (
-          <Image src={image} alt={title} fill objectFit="cover" />
-        ) : (
-          <NoImage />
-        )}
-      </Box>
+      <Card padding="lg" radius="md" className="glass project-card">
+        <Box className={styles["project-card__image-wrapper"]}>
+          {image ? (
+            <Image src={image} alt={title} fill objectFit="cover" />
+          ) : (
+            <NoImage />
+          )}
+        </Box>
 
-      <Text className={styles["project-card__title"]}>{title}</Text>
+        <Text className={styles["project-card__title"]}>{title}</Text>
 
-      <Text className={styles["project-card__description"]} lineClamp={4}>
-        {description}
-      </Text>
+        <Text className={styles["project-card__description"]} lineClamp={4}>
+          {description}
+        </Text>
 
-      <Group mt="sm" gap={6} wrap="wrap">
-        {tags.map((t) => (
-          <Pill key={t} className={styles["project-card__tag"]}>
-            {t}
-          </Pill>
-        ))}
-      </Group>
+        <Group mt="sm" gap={6} wrap="wrap">
+          {tags.map((t) => (
+            <Pill key={t} className={styles["project-card__tag"]}>
+              {t}
+            </Pill>
+          ))}
+        </Group>
 
-      <Group mt="lg" grow>
-        <GradientButton
-          leftSection={<IconEye size={16} />}
-          component="a"
-          href={demo}
-          target="_blank"
-          disabled={!demo}
-        >
-          Live Demo
-        </GradientButton>
+        <Group mt="lg" grow>
+          <GradientButton
+            leftSection={<IconEye size={16} />}
+            component="a"
+            href={demo}
+            target="_blank"
+            disabled={!demo}
+          >
+            Live Demo
+          </GradientButton>
 
-        <OutlineButton
-          leftSection={<IconBrandGithub size={16} />}
-          component="a"
-          href={github}
-          target="_blank"
-          disabled={!github}
-        >
-          View Code
-        </OutlineButton>
-      </Group>
-    </Card>
+          <OutlineButton
+            leftSection={<IconBrandGithub size={16} />}
+            component="a"
+            href={github}
+            target="_blank"
+            disabled={!github}
+          >
+            View Code
+          </OutlineButton>
+        </Group>
+      </Card>
+    </motion.div>
   );
 };
 

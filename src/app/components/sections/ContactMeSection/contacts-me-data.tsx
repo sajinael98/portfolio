@@ -11,15 +11,15 @@ export const contacts = [
     icon: IconBrandWhatsapp,
   },
   {
-    href: "https://instagram.com/yourusername",
+    href: "https://www.instagram.com/saji_dev_25/",
     icon: IconBrandInstagram,
   },
   {
-    href: "https://www.linkedin.com/in/yourprofile",
+    href: "https://www.linkedin.com/in/saji-nael/",
     icon: IconBrandLinkedin,
   },
   {
-    href: "mailto:your@mail.com",
+    href: "mailto:saji.nael.98@gmail.com",
     icon: IconMail,
   },
 ];
