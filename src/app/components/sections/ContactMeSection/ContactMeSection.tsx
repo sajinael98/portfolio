@@ -5,7 +5,7 @@ import { contacts } from "./contacts-me-data";
 
 const ContactMeSection = () => {
   return (
-    <Section title="Contact Me">
+    <Section id="contact" title="Contact Me">
       <Box>
         <Stack align="flex-start" gap="md" maw={600}>
           <Title order={2} ff="inherit" fw={800}>

@@ -100,7 +100,7 @@ const ProjectCard = ({ data, index }: ProjectCardProps) => {
 
 const ProjectsSection = () => {
   return (
-    <Section title="Top Projects">
+    <Section id="projects" title="Top Projects">
       <SimpleGrid cols={{ md: 2 }}>
         {projects.map((p, index) => (
           <ProjectCard key={p.title} data={p} index={index} />

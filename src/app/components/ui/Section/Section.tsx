@@ -2,6 +2,7 @@ import { Box, BoxProps, Stack, Text } from "@mantine/core";
 import styles from "./Section.module.css";
 
 interface SectionProps extends BoxProps {
+  id?: string;
   title: string;
   children: React.ReactNode;
 }

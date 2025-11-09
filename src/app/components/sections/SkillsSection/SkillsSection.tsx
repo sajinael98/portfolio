@@ -3649,7 +3649,7 @@ function SkillsSection({ title, skills }: { title: string; skills: Skill[] }) {
 
 export default function SkillsGrid() {
   return (
-    <Section title="Skills">
+    <Section id="skills" title="Skills">
       <SkillsSection title="Front End" skills={FRONTEND} />
       <SkillsSection title="Back End" skills={BACKEND} />
       <SkillsSection title="DevOps / Tools" skills={DEVOPS} />

@@ -4,7 +4,7 @@ import { AppShellHeader, Group, Button, Anchor } from "@mantine/core";
 import Image from "next/image";
 import styles from "./Header.module.css";
 
-const links = ["Skills", "Projects", "Contact"] as const;
+const links = ["Skills", "Experience", "Projects", "Contact"] as const;
 
 const Header = () => {
   const navlinks = links.map((l) => (
