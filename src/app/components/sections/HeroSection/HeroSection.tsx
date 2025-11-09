@@ -9,7 +9,7 @@ const HeroSection = () => {
   return (
     <Flex
       py={{
-        base: "calc(var(--mantine-spacing-xl) * 2.5)",
+        base: "calc(var(--mantine-spacing-md) * 2.5)",
         md: "calc(var(--mantine-spacing-xl) * 3)",
       }}
     >
