@@ -1,9 +1,9 @@
 "use client";
 
-import { AppShellHeader, Group, Button, Anchor } from "@mantine/core";
+import { Anchor, AppShellHeader, Group } from "@mantine/core";
 import Image from "next/image";
-import styles from "./Header.module.css";
 import GradientButton from "../../ui/GradientButton";
+import styles from "./Header.module.css";
 
 const links = ["Skills", "Experience", "Projects", "Contact"] as const;
 
@@ -13,7 +13,7 @@ const Header = () => {
       key={l}
       underline="never"
       href={`#${l.toLowerCase()}`}
-      className={styles.navLink}
+    className={styles.navLink}
     >
       {l}
     </Anchor>

@@ -5,7 +5,15 @@ import styles from "./page.module.css";
 
 export default function HomePage() {
   return (
-    <AppShell header={{ height: 60 }} className={styles["responsive-shell"]}>
+    <AppShell
+      header={{ height: 60 }}
+      className={styles["responsive-shell"]}
+      styles={{
+        header: {
+          position: "static",
+        },
+      }}
+    >
       <Header />
 
       <Main />
