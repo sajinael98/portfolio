@@ -3,6 +3,7 @@
 import { Flex, Group, Stack, Text } from "@mantine/core";
 import { IconFolder, IconRocket } from "@tabler/icons-react";
 import GradientButton from "@/app/components/ui/GradientButton";
+import OutlineButton from "../../ui/OutlineButton";
 
 const HeroSection = () => {
   return (
@@ -56,6 +57,8 @@ const HeroSection = () => {
             leftSection={<IconRocket size={18} />}
             size="lg"
             visibleFrom="md"
+            href="#contact"
+            component="a"
           >
             Get In Touch
           </GradientButton>
@@ -64,27 +67,31 @@ const HeroSection = () => {
             leftSection={<IconRocket size={18} />}
             size="md"
             hiddenFrom="md"
+            href="#contact"
+            component="a"
           >
             Get In Touch
           </GradientButton>
 
-          <GradientButton
+          <OutlineButton
             leftSection={<IconFolder size={18} />}
-            variant="outline"
-            size="lg"
-            visibleFrom="md"
-          >
-            View Projects
-          </GradientButton>
-
-          <GradientButton
-            leftSection={<IconFolder size={18} />}
-            variant="outline"
             size="md"
-            hiddenFrom="md"
+            visibleFrom="md"
+            href="#projects"
+            component="a"
           >
             View Projects
-          </GradientButton>
+          </OutlineButton>
+
+          <OutlineButton
+            leftSection={<IconFolder size={18} />}
+            size="sm"
+            hiddenFrom="md"
+            href="#projects"
+            component="a"
+          >
+            View Projects
+          </OutlineButton>
         </Group>
       </Stack>
     </Flex>

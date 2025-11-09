@@ -3,6 +3,7 @@
 import { AppShellHeader, Group, Button, Anchor } from "@mantine/core";
 import Image from "next/image";
 import styles from "./Header.module.css";
+import GradientButton from "../../ui/GradientButton";
 
 const links = ["Skills", "Experience", "Projects", "Contact"] as const;
 
@@ -33,14 +34,9 @@ const Header = () => {
           {navlinks}
         </Group>
 
-        <Button
-          variant="gradient"
-          gradient={{ from: "#3A8DFF", to: "#8C52FF", deg: 90 }}
-          radius="md"
-          size="sm"
-        >
+        <GradientButton href="#contact" component="a">
           Hire Me
-        </Button>
+        </GradientButton>
       </Group>
     </AppShellHeader>
   );
