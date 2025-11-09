@@ -7,6 +7,7 @@ import {
   MantineProvider,
   mantineHtmlProps,
 } from "@mantine/core";
+import AnimatedBackground from "./components/AnimatedBackground";
 
 export const metadata: Metadata = {
   title: "Saji Nael | Portfolio",
@@ -24,6 +25,8 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body>
+        <AnimatedBackground />
+
         <MantineProvider forceColorScheme="dark">
           <div className="appshell-wrapper">{children}</div>
         </MantineProvider>

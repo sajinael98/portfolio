@@ -1,25 +1,25 @@
-.responsiveShell {
+.responsive-shell {
   width: 50%;
   margin: 0 auto;
   padding-top: 30px;
 }
 
 @media (max-width: 1024px) {
-  .responsiveShell {
+  .responsive-shell {
     width: 85%;
     padding-top: 30px;
   }
 }
 
 @media (max-width: 768px) {
-  .responsiveShell {
+  .responsive-shell {
     width: 100%;
     padding: 60px 1.25rem 0 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .responsiveShell {
+  .responsive-shell {
     width: 100%;
     padding: 50px 1rem 0 1rem;
   }
