@@ -17,7 +17,7 @@ const Footer = () => {
           © {new Date().getFullYear()} Saji Nael
         </Text>
 
-        <Text  fw={400} style={{ whiteSpace: "nowrap" }}>
+        <Text fw={400} style={{ whiteSpace: "nowrap" }}>
           Built with ❤️ by Saji
         </Text>
       </Group>
