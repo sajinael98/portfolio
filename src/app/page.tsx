@@ -7,30 +7,21 @@ import styles from "./page.module.css";
 import SkillsSection from "./components/sections/SkillsSection";
 import ProjectsSection from "./components/sections/ProjectsSection";
 import ContactMeSection from "./components/sections/ContactMeSection";
+import Main from "./components/layout/Main";
 
 export default function HomePage() {
   return (
     <AppShell
       header={{ height: 60 }}
       styles={{
-        header: { position: "static", backgroundColor: "transparent" },
-        main: { background: "transparent" },
+        header: { position: "static" },
       }}
       className={styles.responsiveShell}
     >
       <AnimatedBackground />
       <Header />
-      <AppShellMain>
-        <HeroSection />
 
-        <ExperienceSection />
-
-        <SkillsSection />
-
-        <ProjectsSection />
-
-        <ContactMeSection />
-      </AppShellMain>
+      <Main />
     </AppShell>
   );
 }
