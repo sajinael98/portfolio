@@ -1,51 +1,69 @@
-import React from "react";
+"use client"
+
+import React, { useEffect, useRef } from "react";
 import Section from "@/app/components/ui/Section";
-import { Box, Stack, Text, Timeline, TimelineItem } from "@mantine/core";
-import { IconBriefcase } from "@tabler/icons-react";
-import styles from "./ExperienceSection.module.css";
+import { Card, Group, Stack, Text, Title } from "@mantine/core";
+import { IconUserCode } from "@tabler/icons-react";
 import { experiences } from "./experience-data";
+import styles from "./ExperienceSection.module.css";
 
 const ExperienceSection = () => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const cards = ref.current?.querySelectorAll(
+      `.${styles["experience-card"]}`
+    );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add(styles["show"]);
+        });
+      },
+      { threshold: 0.15 }
+    );
+    cards?.forEach((card) => observer.observe(card));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <Section title="Experience" mt={120}>
-      <Timeline
-        active={experiences.length}
-        bulletSize={32}
-        lineWidth={4}
-        color="violet"
-      >
+      <Stack ref={ref} className={styles["experience-list"]}>
         {experiences.map((exp, i) => (
-          <TimelineItem
+          <Card
             key={i}
-            bullet={<IconBriefcase size={18} />}
-            title={
-              <Text className={styles.itemTitle}>
-                {exp.role} · {exp.company}
-              </Text>
-            }
+            className={styles["experience-card"]}
+            radius="lg"
+            p="xl"
           >
-            <div
-              className={`${styles.row} ${
-                i % 2 === 0 ? styles.right : styles.left
-              }`}
-            >
-              <Box className={styles.card}>
-                <Stack gap={6}>
-                  <Text c="gray.3" fz="sm">
-                    {exp.period}
-                  </Text>
-
-                  <Text c="gray.2" fz="sm">
-                    {exp.bulletPoints.map((line, idx) => (
-                      <div key={idx}>• {line}</div>
-                    ))}
+            <Group justify="space-between" align="flex-start">
+              <Group align="center">
+                <IconUserCode size={34} className={styles["experience-icon"]} />
+                <Stack gap={2}>
+                  <Title order={4} className={styles["experience-role"]}>
+                    {exp.role}
+                  </Title>
+                  <Text size="sm" className={styles["experience-company"]}>
+                    {exp.company}
                   </Text>
                 </Stack>
-              </Box>
-            </div>
-          </TimelineItem>
+              </Group>
+
+              <Text size="sm" className={styles["experience-period"]}>
+                {exp.period}
+              </Text>
+            </Group>
+
+            <Stack mt="md" gap={6}>
+              {exp.bulletPoints.map((line, idx) => (
+                <Text key={idx} size="sm" className={styles["experience-line"]}>
+                  • {line}
+                </Text>
+              ))}
+            </Stack>
+          </Card>
         ))}
-      </Timeline>
+      </Stack>
     </Section>
   );
 };
