@@ -1,11 +1,13 @@
-import { Button, ButtonProps } from "@mantine/core";
+"use client"
+
+import { Button, ButtonProps, createPolymorphicComponent } from "@mantine/core";
 import { forwardRef } from "react";
 import styles from "./GradientButton.module.css";
 
-type GradientButtonProps = ButtonProps;
+type _GradientButtonProps = ButtonProps;
 
-const GradientButton = forwardRef<HTMLButtonElement, GradientButtonProps>(
-  (props, ref) => (
+const _GradientButton = forwardRef<HTMLButtonElement, _GradientButtonProps>(
+  ({ className, gradient, ...props }, ref) => (
     <Button
       ref={ref}
       variant="gradient"
@@ -13,12 +15,18 @@ const GradientButton = forwardRef<HTMLButtonElement, GradientButtonProps>(
         from: "#3A8DFF",
         to: "#8C52FF",
         deg: 90,
+        ...gradient,
       }}
-      className={styles.button}
+      className={`${styles.button} ${className ?? ""}`}
       bdrs="md"
       {...props}
     />
   )
+);
+
+// ✅ هون السحر — نفس اللي Mantine بيعمله داخلياً
+const GradientButton = createPolymorphicComponent<"button", _GradientButtonProps>(
+  _GradientButton
 );
 
 export default GradientButton;

@@ -4,13 +4,8 @@ const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: isProd ? "/portfolio" : "",
-  trailingSlash: true,
   images: {
     unoptimized: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
   },
 };
 
