@@ -23,7 +23,7 @@ const Header = () => {
     <AppShellHeader withBorder={false} className={"glass"}>
       <Group justify="space-between" align="center" px="lg" h="100%">
         <Image
-          src="/portfolio/logo.png"
+          src="/logo.png"
           alt="SajiDev Logo"
           width={60}
           height={60}
