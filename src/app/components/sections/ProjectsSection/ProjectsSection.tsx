@@ -52,7 +52,12 @@ const ProjectCard = ({ data, index }: ProjectCardProps) => {
       <Card padding="lg" radius="md" className="glass project-card">
         <Box className={styles["project-card__image-wrapper"]}>
           {image ? (
-            <Image src={image} alt={title} fill objectFit="cover" />
+            <Image
+              src={"/portfolio" + image}
+              alt={title}
+              fill
+              objectFit="cover"
+            />
           ) : (
             <NoImage />
           )}
