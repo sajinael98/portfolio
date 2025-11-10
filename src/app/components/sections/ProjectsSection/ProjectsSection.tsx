@@ -53,10 +53,10 @@ const ProjectCard = ({ data, index }: ProjectCardProps) => {
         <Box className={styles["project-card__image-wrapper"]}>
           {image ? (
             <Image
-              src={"/portfolio" + image}
+              src={image}
               alt={title}
               fill
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
             />
           ) : (
             <NoImage />
